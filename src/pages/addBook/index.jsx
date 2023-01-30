@@ -25,9 +25,18 @@ const AddBook = () => {
             completed: completed,
             resume: resume
         }
-        setBook(prev => [...prev, nwBook])
-        console.log('------arbol de libros-------')
-        return nwBook
+        if (validationAdd()) {
+            setBook(prev => [...prev, nwBook])
+            alert('agregando libro')
+            return nwBook
+        } else {
+
+            return ('Imposible agregar nuevo libro hay errores')
+        }
+    }
+
+    const validationAdd = () => {
+        return false;
     }
 
     const handleChangeInput = (e) => {
@@ -107,8 +116,8 @@ const AddBook = () => {
         </form>
         <br></br>
         <div>
-            {JSON.stringify(books)}
-            {JSON.stringify(books.bookc)}
+            {/* {JSON.stringify(books)} */}
+            {/* {JSON.stringify(books.bookc)} */}
         </div>
     </>
 }

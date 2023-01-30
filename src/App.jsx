@@ -5,6 +5,7 @@ import AddBook from './pages/addBook'
 import HomeBook from './pages/home'
 import PageNoFound from './pages/pageNotFound'
 import ViewBook from './pages/viewBook'
+import './style/styles.scss'
 
 function App() {
   const ContextLib = useContext(GlobalContextLibrary)

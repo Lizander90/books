@@ -1,0 +1,55 @@
+body {
+  background-color: #ffffe8;
+}
+
+#root {
+  max-width: 600px;
+  height: 90vh;
+  margin: 0 auto;
+  background-color: #cde990;
+
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(#88cc1a, 0.8);
+  padding: 2rem;
+
+  .footerNav {
+    border-radius: 5px;
+    width: 98%;
+    height: 50px;
+    background-color: #ffd4d4;
+    box-shadow: 2px 2px 4px rgba(#444443, 0.8);
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .containerAllBooks {
+    width: 98%;
+    height: 80vh;
+
+    padding: 10px;
+    background-color: #ffd4d4;
+    margin: 3px auto;
+    border: 1px solid #aacb73;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgba(#444443, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    .containerCardBook {
+      min-width: 180px;
+      height: 250px;
+      padding: 4px;
+      border-radius: 3px;
+
+      box-shadow: 2px 2px 4px rgba(#3d3d3d, 0.3);
+      background-color:rgb( #cde990,0.4);
+    }
+  }
+}
+
+// #FFD4D4
+// #FFFFE8
+// #CDE990
+// #AACB73
