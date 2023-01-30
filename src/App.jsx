@@ -1,34 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useContext, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import UseLibrary, { GlobalContextLibrary } from './context/useLibrary'
+import AddBook from './pages/addBook'
+import HomeBook from './pages/home'
+import PageNoFound from './pages/pageNotFound'
+import ViewBook from './pages/viewBook'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const ContextLib = useContext(GlobalContextLibrary)
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+  return <UseLibrary>
+    <Routes>
+      <Route path='/' element={<HomeBook />} />
+      <Route path={'add'} element={<AddBook />} />
+      <Route path={'view/:idBookParam'} element={<ViewBook />} />
+      <Route path={'*'} element={<PageNoFound />} />
+    </Routes >
+  </UseLibrary>
 }
 
 export default App
